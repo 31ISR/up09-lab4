@@ -177,7 +177,7 @@ def post_new(request):
 ```python
 from django.contrib.auth.models import User
 ...
-author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+author = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True)
 ```
 
 _Не забудьте применить миграцию_
@@ -230,7 +230,6 @@ _Удалите строчку, где мы добавляли статичес�
 
 ```python
 STATIC_URL = 'static/'
-MEDIA_URL = 'media/'
 
 STATIC_ROOT = BASE_DIR / 'assets'
 MEDIA_ROOT = BASE_DIR / 'media'
